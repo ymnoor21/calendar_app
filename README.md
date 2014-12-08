@@ -5,7 +5,7 @@ PHP Crossbar Framework Based Calendar App
 
 Following configurations are required to setup the calendar app on a mac.
 
-1. Added virtual host in: /etc/apache2/extra/httpd-vhosts.conf
+-> Added virtual host in: /etc/apache2/extra/httpd-vhosts.conf
 
 <VirtualHost *:80>
     DocumentRoot "/Users/yamin/Sites/calendar_app/htdocs"
@@ -30,15 +30,15 @@ Following configurations are required to setup the calendar app on a mac.
     ServerAdmin help@mydomain.com
 </VirtualHost>
 
-2. Added the domain in: /etc/hosts:
+-> Added the domain in: /etc/hosts:
 
 127.0.0.1   calendar.local
 
-3. sudo apachectl restart
+-> sudo apachectl restart
 
-4. Run calendar_app.sql to import into mysql database (calendar_app)
+-> Run calendar_app.sql to import into mysql database (calendar_app)
 
-5. Update Mysql login credentials in the htdocs/index.php
+-> Update Mysql login credentials in the htdocs/index.php
 
 
 Thanks
