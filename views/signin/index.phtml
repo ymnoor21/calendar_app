@@ -1,0 +1,16 @@
+	
+	<!-- Login form start -->
+	<form class="form-signin" role="form" action="/signin" method="POST">
+		<div class="signin_container">
+	        <h2 class="form-signin-heading">Sign In</h2>
+	        <?php
+	        if($this->error_msg != ""):
+	        	echo "<h5 style='color: red'>" . implode('<br/>', $this->error_msg) . "</h5>";
+	        endif;
+	        ?>
+	        <input type="email" class="form-control" placeholder="Email address" required autofocus name="user_email" value="">
+	        <input type="password" class="form-control" placeholder="Password" required name="user_pass" value="">
+	        <button class="btn btn-lg btn-primary btn-block" type="submit" name="user_signin" value="signinsubmit">Sign in</button>
+	    </div>
+    </form>
+    <!-- Login form end -->

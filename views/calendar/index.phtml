@@ -1,0 +1,48 @@
+<link href="/css/calendar.css" rel="stylesheet"> <!-- Load calendar related css -->
+
+<div class="rows">
+    <select class="form-control" style="width: 200px; display: inline;" name="calendar_year" id="calendar_year" onchange="applyFilter();">
+        <?php
+        foreach($this->years as $key => $value):
+            if($this->selected_year == $value):
+                echo "<option value='{$value}' selected>{$value}</option>";
+            else:
+                echo "<option value='{$value}'>{$value}</option>";
+            endif;
+        endforeach;
+        ?>
+    </select>
+    <select class="form-control" style="width: 200px; display: inline;" name="calendar_month" id="calendar_month" onchange="applyFilter();">
+        <?php
+        foreach($this->months as $key => $value):
+            if($this->selected_month == $key):
+                echo "<option value='{$key}' selected>{$value}</option>";
+            else:
+                echo "<option value='{$key}'>{$value}</option>";
+            endif;
+        endforeach;
+        ?>
+    </select>
+    <div style="clear: both; line-height: 10px">&nbsp;</div>
+    <?php echo $this->calendar; ?>
+</div>
+
+<!-- note dialog box html -->
+<div id="notedialog" title="Note">
+    <p>
+        <textarea name="dlg_note_text" id="dlg_note_text" class="form-control"></textarea>
+    </p>
+    <p>
+        <input type="hidden"  name="dlg_note_id"     id="dlg_note_id"    value=""/>
+        <input type="hidden"  name="dlg_note_date"   id="dlg_note_date"  value=""/>
+        <button type="button" class="btn btn-primary" onclick="saveNote();">Save</button>
+        <button type="button" class="btn btn-primary" onclick="deleteNote();" style="display: none;" id="dlg_delete_note">Delete</button>
+        <button type="button" class="btn btn-primary" onclick="closeNote();">Close</button>
+    </p>
+</div>
+
+<!-- note list dialog box html -->
+<div id="notelistdialog" title="Note List">
+    <div id="dlg_lst" style="overflow: auto;">
+    </div>
+</div>
